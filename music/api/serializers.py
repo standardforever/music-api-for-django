@@ -18,7 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
 class QuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = MusicGenreQuiz
-        fields = ['question1', 'question2', 'question3', 'answer', 'question_id']
+        fields = ['option_1', 'option_2', 'option_3', 'answer', 'question', 'question_id']
 
 class MusicGenreSerializer(serializers.ModelSerializer):
     quiz = QuizSerializer(many=True)

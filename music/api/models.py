@@ -13,18 +13,19 @@ class User(AbstractUser):
 
 
 class Album(models.Model):
-    artist = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
+    artist = models.CharField(max_length=250)
+    name = models.CharField(max_length=250)
 
 class MusicGenre(models.Model):
-    name = models.CharField(max_length=100)
-    artist = models.CharField(max_length=100)
+    name = models.CharField(max_length=250)
+    artist = models.CharField(max_length=250)
 
 class MusicGenreQuiz(models.Model):
     music_genre = models.ForeignKey(MusicGenre, on_delete=models.CASCADE, related_name='quiz')
-    question1 = models.CharField(max_length=100)
-    question2 = models.CharField(max_length=100)
-    question3 = models.CharField(max_length=100)
-    answer = models.CharField(max_length=100)
+    option_1 = models.CharField(max_length=250)
+    option_2 = models.CharField(max_length=250)
+    option_3 = models.CharField(max_length=250)
+    answer = models.CharField(max_length=250)
     question_id = models.IntegerField()
+    question = models.CharField(max_length=250)
 
